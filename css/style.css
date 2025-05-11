@@ -29,10 +29,13 @@ header {
 
 nav {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1em;
+  justify-content: space-between; /* المسافة بين العناصر في اليمين واليسار */
+  align-items: center; /* محاذاة العناصر عموديًا */
+  gap: 1.5em; /* المسافة بين العناصر */
   margin-top: 1em;
+  padding: 0 2em; 
+    position: relative;
+  z-index: 5;
 }
 
 nav a {
@@ -46,7 +49,27 @@ nav a {
 nav a:hover {
   background-color: #444;
 }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+  z-index: 5;
+  position: absolute;
+  top: 0.5px;
+  right: 0;
+  width: 100%; /* تأكد أن العرض يغطي الشاشة بالكامل */
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 1em 0;
+  box-sizing: border-box;
+  text-align: center;
+}
 
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 main {
   display: flex;
   flex-direction: column;
@@ -175,7 +198,13 @@ button:hover {
 /* ------------------------------
    صفحة "عنّي" (About Page) 
 ------------------------------ */
-
+.hamburger {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+    z-index: 10; /* تضمن أن الهامبرجر يبقى فوق العناصر الأخرى */
+      position: relative;
+}
 .about-content {
   display: flex;
   gap: 2em;
@@ -230,7 +259,24 @@ button:hover {
     width: 100%;
     text-align: center;
   }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
 
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
   main {
     padding: 1em;
   }

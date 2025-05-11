@@ -8,16 +8,22 @@
 </head>
 <body>
 
-  <header>
-      
-      <h1>مدونة السفر الخاصة بي</h1>
-      <nav>
-          <a href="index.html">الرئيسية</a>
-      <a href="about.html">عنّي</a>
-      <a href="posts.html">مقالات</a>
-      <a href="contact.html">اتصل بي</a>
+<header>
+  <div class="container">
+    <div class="logo">مدونة السفر</div>
+
+    <nav>
+      <div class="hamburger" id="hamburger">☰</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="posts.html">المدونات</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+      </ul>
     </nav>
+  </div>
 </header>
+
 <div class="slideshow-container">
 <div class="slide fade"><img src="images/image1.jpg" alt="صورة 1"></div>
 <div class="slide fade"><img src="images/image2.jpg" alt="صورة 2"></div>
@@ -54,6 +60,15 @@
   <footer>
     <p>© 2025 مدونة السفر. جميع الحقوق محفوظة.</p>
   </footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
 
 </body>
 </html>
